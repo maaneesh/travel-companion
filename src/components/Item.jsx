@@ -4,10 +4,13 @@ function Item({ item, onDeleteItem, onToggle }) {
     const handleDelete = () => {
         onDeleteItem(item.id)
     }
+    const handleToggle = () => {
+        onToggle(item.id)
+    }
     return (
         <div>
             <li>
-                <input type="checkbox" onClick={onToggle} />
+                <input type="checkbox" onClick={handleToggle} />
                 <span style={item.packed ? { textDecoration: 'line-through' } : {}}>
                     {item.quantity} {item.description}
                 </span>

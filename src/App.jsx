@@ -26,25 +26,25 @@ function App() {
     setItems(items.filter(item => item.id !== id))
 
   }
-  function handleToggleItem(id) {
-    console.log(id)
+  const handleToggleItem = (id) => {
+    //console.log(id)
     // updating an object in an array
-    setItems((items)=> items.map((item)=> (
-      item.id === id ? {
-        ...item, 
-        packed: !item.packed
-      } : item
-    )))
+    setItems((items) => items.map((item) => item.id === id ? {
+      ...item,
+      packed: !item.packed
 
+    } : item))
   }
 
   return (
     <div className='app'>
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <PackingList items={items}
+      <PackingList
+        items={items}
         onDeleteItem={handleDeleteItem}
-        onToggle={handleToggleItem} />
+        onToggle={handleToggleItem}
+      />
       <Stats items={items} />
 
     </div>

@@ -35,18 +35,11 @@ function Form({ onAddItems }) {
         // console.log(e.target.value);
     }
 
-    const handleToggleItem = (id) => {
-        setItems((items) => items.map((item) => item.id === id ? {
-            ...item,
-            packed: !item.packed
-        } : item))
-
-
-    }
 
     return (
         <form className="add-form" onSubmit={handleSubmit}>
             <h3>What do you need for your trip? 😍🎉</h3>
+            
             <select value={quantity} onChange={handleQuantityChange}>
                 {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
                     <option value={num} key={num}> {num} </option>
